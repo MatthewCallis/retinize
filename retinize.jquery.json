@@ -1,7 +1,7 @@
 {
     "name": "retinize",
     "title": "Retinize",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "description": "Retinize will upscale (using nearest neighbor) images to look correctly on retina screens. This is particularly useful for pixel art when you don't want to store an upscaled version.",
     "keywords": [
         "image",
