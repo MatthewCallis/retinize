@@ -1,0 +1,34 @@
+{
+    "name": "Retinize",
+    "title": "Retinize",
+    "version": "0.1.0",
+    "description": "Retinize will upscale (using nearest neighbor) images to look correctly on retina screens. This is particularly useful for pixel art when you don't want to store an upscaled version.",
+    "keywords": [
+        "image",
+        "retina",
+        "pixel",
+        "upscale"
+    ],
+    "author": {
+        "name": "Matthew Callis",
+        "email": "matthew.callis@gmail.com"
+    },
+    "maintainers": [
+        {
+            "name": "Matthew Callis",
+            "email": "matthew.callis@gmail.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/MatthewCallis/retinize/LICENSE.txt"
+        }
+    ],
+    "bugs": "https://github.com/MatthewCallis/retinize/issues",
+    "homepage": "https://github.com/MatthewCallis/retinize",
+    "docs": "https://github.com/MatthewCallis/retinize",
+    "dependencies": {
+        "jquery": ">=1.8"
+    }
+}
