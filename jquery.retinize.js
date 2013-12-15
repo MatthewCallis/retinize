@@ -1,4 +1,9 @@
-;(function($, window, document, undefined){
+/*!
+ * retinize.js v0.1.0 - Retinize will upscale (using nearest neighbor) images to look correctly on retina screens.
+ * Copyright (c) 2013 Matthew Callis - https://github.com/MatthewCallis/retinize
+ * License: MIT
+ */
+ ;(function($, window, document, undefined){
   var pluginName = "retinize",
       defaults = {
         forceCanvas: false

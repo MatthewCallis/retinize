@@ -4,19 +4,37 @@
 
 ## How to Use
 
+### Vanilla JavaScript
+
+```javascript
+// Construct an instance of Retinize, passing the element
+var el = document.querySelectorAll("img.pixelart");
+var retinize  = new Retinize(el);
+// Initialise
+retinize.init();
+```
+
+### jQuery
+
 To enable on all images with the class of 'retinize' simply call
 
-    $('img.retinize').retinize();
+```javascript
+$('img.retinize').retinize();
+```
 
 If you want to force the effect on all images reguardless of need use
 
-    $('img.retinize').retinize({ forceCanvas: true });
+```javascript
+$('img.retinize').retinize({ forceCanvas: true });
+```
 
 All available settings
 
-    var options = {
-      forceCanvas: false
-    };
+```javascript
+var options = {
+  forceCanvas: false
+};
+```
 
 ## Change Log
 
