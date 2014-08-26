@@ -1,0 +1,9 @@
+{
+  "name": "retinize",
+  "repo": "MatthewCallis/retinize",
+  "description": "Retinize will upscale (using nearest neighbor) images to look correctly on retina screens.",
+  "version": "0.1.0",
+  "keywords": ["retina", "pixel", "pixelate"],
+  "scripts": ["retinize.js"],
+  "license": "MIT"
+}
