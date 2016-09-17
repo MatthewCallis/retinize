@@ -4,7 +4,7 @@ const babel = require('rollup-plugin-babel');
 const json = require('rollup-plugin-json');
 
 rollup({
-  entry: 'src/avatar.js',
+  entry: 'src/retinize.js',
   plugins: [
     json({
       exclude: ['node_modules/**'],

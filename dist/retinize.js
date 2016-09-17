@@ -1,94 +1,52 @@
-/*!
- * retinize.js v0.1.0 - Retinize will upscale (using nearest neighbor) images to look correctly on retina screens.
- * Copyright (c) 2013 Matthew Callis - https://github.com/MatthewCallis/retinize
- * License: MIT
- */
-(function(global) {
-  'use strict';
-  /**
-   * @constructor
-   * @param {DOMElement} element the image element
-   * @param {Object} options options for the widget
-   */
-  function Retinize(element, options){
-    options = options || Retinize.options;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-    this.element     = element;
-    this.forceCanvas = options.offset;
-    this.browser     = { chrome: false, mozilla: false, opera: false, msie: false, safari: false };
-  }
-  Retinize.prototype = {
-    constructor : Retinize,
-    /**
-     * Initialises the widget
-     */
-    init: function(){
-      // Return if we don't support devicePixelRatio
-      if(!window.devicePixelRatio){
-        return;
-      }
-      // Return if we don't need retina support
-      if(window.devicePixelRatio === 1){
-        return;
-      }
-      if(!this.element){
-        return;
-      }
-      // Browser support
-      var ua = navigator.userAgent;
-      for(var c in this.browser){
-        this.browser[c] = ((new RegExp(c, 'i').test(ua))) ? true : false;
-        if(this.browser.mozilla && c === 'mozilla'){
-          this.browser.mozilla = ((new RegExp('firefox', 'i').test(ua))) ? true : false;
-        }
-        if(this.browser.chrome && c === 'safari'){
-          this.browser.safari = false;
-        }
-      }
-      // Actually convert or style the elements.
-      for(var i = 0, l = this.element.length; i < l; i++){
-        if(this.forceCanvas === true || this.browser.mozilla || this.browser.chrome){
-          this.convertToCanvas(this.element[i]);
-        }
-        else{
-          if(this.browser.safari){
-            this.element[i].style['image-rendering'] = '-webkit-optimize-contrast';
-            this.element[i].style['image-rendering'] = 'pixelated';
-          }
-        }
-      }
-    },
-    /**
-     * Converts the image to a canvas element
-     */
-    convertToCanvas: function(el){
-      var canv = document.createElement('canvas');
-      canv.id = el.id;
-      canv.title = el.title;
-      canv.alt = el.alt;
-      canv.className = el.className;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-      canv.width  = el.width  * window.devicePixelRatio;
-      canv.height = el.height * window.devicePixelRatio;
-      canv.style.width  = el.width  + "px";
-      canv.style.height = el.height + "px";
+var Retinize = function () {
+  function Retinize(element) {
+    _classCallCheck(this, Retinize);
 
-      var ctx = canv.getContext("2d");
-      ctx.imageSmoothingEnabled       = false;
-      ctx.mozImageSmoothingEnabled    = false;
-      ctx.webkitImageSmoothingEnabled = false;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-      ctx.drawImage(el, 0, 0);
-
-      el.parentNode.replaceChild(canv, el);
+    // Return unless we have an element
+    if (!element || element === '') {
+      return;
     }
-  };
-  /**
-   * Default options
-   * @type {Object}
-   */
-  Retinize.options = {
-    forceCanvas : false
-  };
-  global.Retinize = Retinize;
-}(this));
+
+    var elements = [];
+    if (typeof element === 'string') {
+      elements = document.querySelectorAll('div');
+    } else {
+      elements.push(element);
+    }
+
+    [].forEach.call(elements, function (node) {
+      Retinize.convertToCanvas(node);
+    });
+  }
+
+  _createClass(Retinize, null, [{
+    key: 'convertToCanvas',
+    value: function convertToCanvas(element) {
+      var canvas = document.createElement('canvas');
+      canvas.id = element.id;
+      canvas.title = element.title;
+      canvas.alt = element.alt;
+      canvas.className = element.className;
+
+      canvas.width = element.width * window.devicePixelRatio;
+      canvas.height = element.height * window.devicePixelRatio;
+      canvas.style.width = element.width + 'px';
+      canvas.style.height = element.height + 'px';
+
+      var context = canvas.getContext('2d');
+      context.imageSmoothingEnabled = false;
+      context.mozImageSmoothingEnabled = false;
+      context.webkitImageSmoothingEnabled = false;
+      context.scale(window.devicePixelRatio, window.devicePixelRatio);
+      context.drawImage(element, 0, 0);
+
+      element.parentNode.replaceChild(canvas, element);
+    }
+  }]);
+
+  return Retinize;
+}();

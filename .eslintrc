@@ -18,7 +18,7 @@
     camelcase: 0,
     max-len: 0,
     no-param-reassign: 0,
-    no-unused-vars: ["error", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_", "caughtErrors": "none" }],
+    no-unused-vars: ["error", { "varsIgnorePattern": "^(_|Retinize)", "argsIgnorePattern": "^_", "caughtErrors": "none" }],
     no-plusplus: 0, # Meaningless as other rules prevent the errors that could happen.
     no-restricted-syntax: 0,
   }
