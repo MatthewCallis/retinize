@@ -1,0 +1,90 @@
+{
+  "name": "retinize",
+  "version": "1.0.0",
+  "description": "Retinize will upscale (using nearest neighbor / pixelate) images to look correctly on retina screens.",
+  "author": "Matthew Callis <matthew.callis@gmail.com>",
+  "contributors": [
+    {
+      "name": "Matthew Callis",
+      "email": "matthew.callis@gmail.com"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "Matthew Callis",
+      "email": "matthew.callis@gmail.com",
+      "web": "https://github.com/MatthewCallis/retinize"
+    }
+  ],
+  "main": "dist/retinize.js",
+  "files": [
+    "dist/retinize.js"
+  ],
+  "homepage": "https://github.com/MatthewCallis/retinize",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatthewCallis/retinize"
+  },
+  "bugs": {
+    "url": "https://github.com/MatthewCallis/retinize/issues"
+  },
+  "keywords": [
+    "pixelate",
+    "retina",
+    "upscale",
+    "nearest neighbor"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-external-helpers": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-es2016": "^6.11.3",
+    "babel-register": "^6.14.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "codeclimate-test-reporter": "^0.3.3",
+    "coveralls": "^2.11.13",
+    "dirty-chai": "^1.2.2",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-mocha": "4.5.1",
+    "eslint-plugin-react": "^6.2.2",
+    "istanbul": "^0.4.5",
+    "jquery": "^3",
+    "npm-bump": "^0.0.20",
+    "precommit-hook-eslint": "^3.0.0",
+    "rollup": "^0.35.11",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-json": "^2.0.2",
+    "uglify-js": "^2.7.3"
+  },
+  "directories": {},
+  "preferGlobal": false,
+  "private": false,
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  ],
+  "jam": {
+    "dependencies": {}
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "local-web-server": "ruby -run -e httpd . -p 8181",
+    "make": "node rollup.config.js",
+    "validate": "npm ls",
+    "uglify": "uglifyjs dist/retinize.js > dist/retinize.min.js"
+  },
+  "github": "https://github.com/MatthewCallis/retinize",
+  "pre-commit": [
+    "lint",
+    "validate"
+  ]
+}
