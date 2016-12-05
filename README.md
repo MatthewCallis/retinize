@@ -2,8 +2,6 @@
 
 [![Dependency Status](https://david-dm.org/MatthewCallis/retinize.svg)](https://david-dm.org/MatthewCallis/retinize)
 [![devDependency Status](https://david-dm.org/MatthewCallis/retinize/dev-status.svg?style=flat)](https://david-dm.org/MatthewCallis/retinize#info=devDependencies)
-[![git-brag-stats](https://labs.turbo.run/git-brag?user=MatthewCallis&repo=retinize&maxn=8)](https://github.com/turbo/git-brag)
-
 
 [Retinize](https://github.com/MatthewCallis/retinize) will upscale (using nearest neighbor) images to look correctly on retina screens. This is particularly useful for pixel art when you don't want to store an upscaled version. Here's a [demo](http://jsfiddle.net/matthewcallis/hrMeA/).
 
