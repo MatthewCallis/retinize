@@ -7,7 +7,7 @@ class Retinize {
 
     let elements = [];
     if (typeof element === 'string') {
-      elements = document.querySelectorAll('div');
+      elements = document.querySelectorAll(element);
     } else {
       elements.push(element);
     }
